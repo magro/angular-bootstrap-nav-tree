@@ -1,9 +1,7 @@
-(function() {
+define(['angular'], function(angular) {
   var module;
-
   module = angular.module('angularBootstrapNavTree', []);
-
-  module.directive('abnTree', [
+  return module.directive('abnTree', [
     '$timeout', function($timeout) {
       return {
         restrict: 'E',
@@ -480,5 +478,4 @@
       };
     }
   ]);
-
-}).call(this);
+});
