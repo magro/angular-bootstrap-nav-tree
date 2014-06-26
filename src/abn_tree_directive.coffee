@@ -191,6 +191,9 @@ define ['angular'], (angular) ->
 
           if not branch.expanded?
             branch.expanded = false
+          
+          if not branch.classes?
+            branch.classes = []
 
           #
           # icons can be Bootstrap or Font-Awesome icons:
@@ -199,6 +202,7 @@ define ['angular'], (angular) ->
           #
           if not branch.children or branch.children.length == 0 
             tree_icon = attrs.iconLeaf
+            branch.classes.push "leaf" if "leaf" not in branch.classes
           else
             if branch.expanded
               tree_icon = attrs.iconCollapse
@@ -213,6 +217,7 @@ define ['angular'], (angular) ->
             level     : level
             branch    : branch
             label     : branch.label
+            classes   : branch.classes
             tree_icon : tree_icon
             visible   : visible
 
