@@ -76,7 +76,7 @@ module.exports = (grunt)->
     coffee:
       dev:
         options:
-          bare:false
+          bare:true
         files:
           #
           # the _temp.coffee file has the "template html" baked-in by Grunt
